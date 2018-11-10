@@ -16,44 +16,32 @@ var letterGuess = document.getElementById("letter-guess");
 
 
 if (userguess === computerGuess) {
-alert("you win");
+// alert("you win");
 wins++;
 }
 if (userguess != computerGuess) {
-alert("you lose");
+// alert("you lose");
 losses++;
 }
-//  for (var i = 0; i < 9; i++) {
+
 if (userguess != computerGuess) {
 guesses--; 
 }
-// }
-// if (userguess === computerGuess) {
-
-// }
 
 if (userguess != computerGuess) {
 letterGuess.innerHTML = letterGuess.innerHTML + userguess; 
 }
-
-// if (guesses === 0) {
-//     guesses = 10;
-//     losses ++;
-//     guessChoices = [];
-
-if(losses === 9) {
-guesses = 9;
-letterGuess.innerHTML = "";
-losses = 0;
-}
-
 
 var html = "<p>Wins: " + wins + "</p>" +
 "<p>Losses: " + losses + "</p>" +
 "<p>Guesses Left: " + guesses + "</p>";
 
 document.querySelector("#game").innerHTML = html;
-// for (var i = 0; i < 9; i++) {
-//  userguess--; 
 
+if (losses === 9) {
+    guesses = 9;
+    letterGuess.innerHTML = "Your guesses so far:";
+    losses = 0;
+    
+    }
 }  
